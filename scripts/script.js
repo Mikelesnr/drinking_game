@@ -23,12 +23,16 @@ function cardSelector() {
             centerDenomination=denomination;
             centerSuit=suit;
             centerImg.src=`./images/${denomination+suit}.jpg`;
+            alert('chug your drink');
         }
     }else{
         selectedImg.src="./images/joker.jpg";
         deckImg.src="./images/joker.jpg";
-    }
-    
+        alert('chug your drink');
+    }    
+}
+const reset=function (img) {
+    img.src="./images/backCover.jpg"
 }
 btnPick.addEventListener('click',cardSelector);
 btnOpen.addEventListener('click',function () {
@@ -44,4 +48,9 @@ btnOpen.addEventListener('click',function () {
 });
 btnDeckReset.addEventListener('click',function () {
     deckImg.src="./images/backCover.jpg";
+})
+btnReset.addEventListener('click',function(){
+    reset(centerImg);
+    reset(deckImg);
+    reset(selectedImg);
 })
