@@ -34,7 +34,11 @@ function cardSelector() {
 const reset=function (img) {
     img.src="./images/backCover.jpg"
 }
-btnPick.addEventListener('click',cardSelector);
+btnPick.addEventListener('click',function(){
+    if(centerImg.getAttribute('src') != './images/backCover.jpg'){
+    cardSelector();
+    }
+});
 btnOpen.addEventListener('click',function () {
     const denomination=picker(denominations);
     const suit=picker(suits);
@@ -50,7 +54,9 @@ btnDeckReset.addEventListener('click',function () {
     deckImg.src="./images/backCover.jpg";
 })
 btnReset.addEventListener('click',function(){
+    if(centerImg.getAttribute('src') != './images/backCover.jpg'){
     reset(centerImg);
     reset(deckImg);
     reset(selectedImg);
+    }
 })
